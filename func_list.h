@@ -10,7 +10,7 @@ void test2(struct Player *p) {
 void test1(struct Player *p) {
     printf("Section 1\n");
     
-    choice opts[2] = {
+    Choice opts[2] = {
         { 0, "first opt" },
         { 1, "second opt" }
     };
