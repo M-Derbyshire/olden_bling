@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "player.h"
-#include "choice_maker.h"
+#include "choice.h"
 
 void test2(struct Player *p) {
     printf("Section 2\n");
