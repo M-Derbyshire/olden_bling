@@ -1,14 +1,21 @@
 #include <stdio.h>
 #include "func_list.h"
+#include "player.h"
 
 
-char *collectedItems[5];
 
 int main()
 {
-    int currentSection = 0;
-    while(currentSection > -1) {
-        currentSection = (*sectionFuncs[currentSection])(collectedItems);
+    struct Player player;
+    player.max_health = 100;
+    player.health = player.max_health;
+    player.weapon = getPlayerInitialWeapon();
+    player.defense = getPlayerInitialDefense();
+    
+    player.current_location = &test1;
+    
+    while(player.current_location != NULL) {
+        (*player.current_location)(&player);
         printf("\n----------\n\n");
     }
     

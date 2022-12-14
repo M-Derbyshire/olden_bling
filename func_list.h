@@ -1,26 +1,22 @@
 #include <stdio.h>
+#include "player.h"
 #include "choice_maker.h"
 
+void test2(struct Player *p) {
+    printf("Section 2\n");
+    p->current_location = NULL;
+}
 
-int test1(char *collectedItems[]) {
+void test1(struct Player *p) {
     printf("Section 1\n");
     
     choice opts[2] = {
-        { 1, "first opt" },
-        { -2, "second opt" }
+        { 0, "first opt" },
+        { 1, "second opt" }
     };
     
-    return makeChoice(opts, 2);
+    int choice = makeChoice(opts, 2);
+    
+    if(choice == 1)
+        p->current_location = &test2;
 }
-
-int test2(char *collectedItems[]) {
-    printf("Section 2\n");
-    return -1;
-}
-
-
-
-int (*sectionFuncs[10])(char**) = {
-    test1,
-    test2
-};
