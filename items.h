@@ -1,3 +1,6 @@
+#ifndef ITEMS_HG
+#define ITEMS_HG
+
 /* Enum of possible collectible items */
 typedef enum {
     BootRune = (short)1,
@@ -11,3 +14,5 @@ struct ValuedItem {
     char verb[6];
     short value;
 };
+
+#endif
