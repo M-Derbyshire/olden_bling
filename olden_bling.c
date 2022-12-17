@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "func_list.h"
 #include "player.h"
-#include "combat.h"
 
 
 
@@ -13,9 +11,10 @@ int main()
     
     struct Player player = createPlayer();
     
-    player.current_location = &test1;
+    player.current_location = NULL;
     
-    while(player.current_location != NULL) {
+    while(player.current_location != NULL) 
+    {
         (*player.current_location)(&player);
         printf("\n----------\n\n");
     }
