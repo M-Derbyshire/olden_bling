@@ -31,8 +31,8 @@ struct Player {
     short max_health;
     short health;
     COLLECTIBLES collectibles[3];
-    struct ValuedItem weapon;
-    struct ValuedItem defense;
+    struct ValuedItem weapon; // Weapon value is the amount of damage done by a successful attack
+    struct ValuedItem defense; // Defense value determines the chance of a defense being successful. >=10 is unbeatable
     Location current_location;
 };
 
