@@ -31,12 +31,22 @@ struct Player {
     short max_health;
     short health;
     COLLECTIBLES collectibles[3];
+    short collectable_count; //How many collected items are in the collectibles array?
     struct ValuedItem weapon; // Weapon value is the amount of damage done by a successful attack
     struct ValuedItem defense; // Defense value determines the chance of a defense being successful. >=10 is unbeatable
     Location current_location;
 };
 
 
+
+/* Add collectible to player's collectibles array */
+void addCollectibleToPlayer(struct Player *player, COLLECTIBLES collectible)
+{
+    player->collectibles[player->collectable_count] = collectible;
+    player->collectable_count++;
+}
+
+/* Create an initialised player (doesn't initialise the current_location) */
 struct Player createPlayer()
 {
     struct Player player;
@@ -44,6 +54,7 @@ struct Player createPlayer()
     player.health = player.max_health;
     player.weapon = getPlayerInitialWeapon();
     player.defense = getPlayerInitialDefense();
+    player.collectable_count = 0;
     
     return player;
 }
