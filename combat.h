@@ -3,6 +3,7 @@
 #include "player.h"
 #include "monster.h"
 #include "choice.h"
+#include "util.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -14,12 +15,6 @@ void printPlayerAttackDesc(struct Player *p) {
 /* Prints a description of a player's defense */
 void printPlayerDefenseDesc(struct Player *p) {
     printf("You %s the enemy's attack with your %s\n", p->defense.verb, p->defense.name);
-}
-
-/* get a random string from a monster's description array (rand should be seeded elsewhere) */
-const char* getRandomStringFromArray(char *arr[], int count)
-{
-    return arr[rand() % count];
 }
 
 /* Prints a random attack description for a monster */
