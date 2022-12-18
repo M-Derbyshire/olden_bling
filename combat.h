@@ -130,6 +130,8 @@ int runCombat(struct Player *player, struct Monster *monster)
         // Run round
         runCombatRound(chosenAction, enemyDefends, player, monster);
         printf("\n");
+        promptToPressEnter("continue");
+        printf("\n");
         
         // End the fight?
         if (monster->health <= 0)
