@@ -112,10 +112,19 @@ void corridor1(struct Player *player)
     {
         if(zombieIsAlive)
         {
+            printf("\n");
             int fightResult = runCombat(player, &zombie);
             if(fightResult == 0)
                 player->current_location = NULL; 
-            //If player won, we just want to return to this location again
+            else
+            {
+                //If player won, we just want to return to this location again
+                printf("\nYou pick up the zombie's rusty sword.\n\n");
+                struct ValuedItem rustySword = { "rusty sword", "slash", (short)10 };
+                player->weapon = rustySword;
+                promptToPressEnter("continue");
+                printf("\n");
+            }
         }
         else
            player->current_location = NULL; 
