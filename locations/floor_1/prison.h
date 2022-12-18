@@ -6,9 +6,12 @@
 #include "../../choice.h"
 #include "../../items.h"
 
-
 /* The corridor outside the prison cells (defined at the bottom) */
 void prisonCorridor(struct Player *player);
+
+#include "corridor1.h"
+
+
 
 
 /* The starting point of the game */
@@ -104,7 +107,7 @@ void prisonCorridor(struct Player *player)
     else if(result == 3)
         player->current_location = &prisonCell4;
     else
-        player->current_location = NULL;
+        player->current_location = &corridor1;
 }
 
 #endif
