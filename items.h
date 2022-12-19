@@ -3,7 +3,7 @@
 
 /* Enum of possible collectible items */
 typedef enum {
-    BOOTRUNE = (short)1,
+    WEBRUNE = (short)1,
     KEYRING,
     OLDENBLING
 }Collectible;

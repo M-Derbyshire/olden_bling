@@ -24,7 +24,7 @@ void coinFlipRoom(struct Player *player)
     printf("You are standing in a small room. In front of you there is a strange old man, sat behind a table.\n");
     printf("The man looks up at you, and speaks.\n\n");
     
-    if(!playerHasCollectable(player, BOOTRUNE))
+    if(!playerHasCollectable(player, WEBRUNE))
     {
         printf("\"Well, weary prisoner. Would you like to play a game?\n");
         printf("I have here in my pocket a coin, and I do enjoy flipping it.\n");
@@ -45,9 +45,9 @@ void coinFlipRoom(struct Player *player)
             {
                 printf("The coin lands on heads.\n");
                 printf("\"Congratulations!\" the man says. \"Here is your reward.\"\n");
-                printf("The man hands you a Rune with a picture of a boot carved into it. You look at it, then back at him.\n");
+                printf("The man hands you a Rune with a picture of a spider's web carved into it. You look at it, then back at him.\n");
                 printf("\"Yes, that's your prize. Now, move along. I have things to be thinking about.\"\n");
-                addCollectibleToPlayer(player, BOOTRUNE);
+                addCollectibleToPlayer(player, WEBRUNE);
             }
             else
             {
