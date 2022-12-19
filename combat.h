@@ -9,12 +9,12 @@
 
 /* Prints a description of a player's attack */
 void printPlayerAttackDesc(struct Player *p) {
-    printf("You %s the enemy with your %s\n", p->weapon.verb, p->weapon.name);
+    printf("You %s the enemy with your %s.\n", p->weapon.verb, p->weapon.name);
 }
 
 /* Prints a description of a player's defense */
 void printPlayerDefenseDesc(struct Player *p) {
-    printf("You %s the enemy's attack with your %s\n", p->defense.verb, p->defense.name);
+    printf("You %s the enemy's attack with your %s.\n", p->defense.verb, p->defense.name);
 }
 
 /* Prints a random attack description for a monster */
@@ -71,14 +71,14 @@ void runCombatRound(int playerAction, int enemyDefends, struct Player *player, s
         if(enemyDefends)
         {
             int enemyDefenseSuccessful = defenseSuccessful(monster->defense);
-            printf((enemyDefenseSuccessful) ? "Enemy defense was successful\n" : "Enemy defense failed\n");
+            printf((enemyDefenseSuccessful) ? "Enemy defense was successful.\n" : "Enemy defense failed.\n");
             
             if(!enemyDefenseSuccessful)
                 monster->health -= player->weapon.value;
         }
         else
         {
-            printf("You both succeed with your attacks\n");
+            printf("You both succeed with your attacks.\n");
             player->health -= monster->attack;
             monster->health -= player->weapon.value;
         }
@@ -86,11 +86,11 @@ void runCombatRound(int playerAction, int enemyDefends, struct Player *player, s
     else if(playerAction == 1) // Player defends
     {
         if(enemyDefends)
-            printf("You both succeed with your defense\n");
+            printf("You both succeed with your defense.\n");
         else
         {
             int playerDefenseSuccessful = defenseSuccessful(player->defense.value);
-            printf((playerDefenseSuccessful) ? "Your defense was successful\n" : "Your defense failed\n");
+            printf((playerDefenseSuccessful) ? "Your defense was successful.\n" : "Your defense failed.\n");
             
             if(!playerDefenseSuccessful)
                 player->health -= monster->attack;
@@ -103,7 +103,7 @@ void runCombatRound(int playerAction, int enemyDefends, struct Player *player, s
         if(!enemyDefends && !dodgeSucceeds)
             player->health -= monster->attack;
         
-        printf((dodgeSucceeds) ? "You successfully dodge\n" : "You fail to dodge\n");
+        printf((dodgeSucceeds) ? "You successfully dodge.\n" : "You fail to dodge.\n");
     }
 }
 
@@ -136,13 +136,13 @@ int runCombat(struct Player *player, struct Monster *monster)
         // End the fight?
         if (monster->health <= 0)
         {
-            printf("You have defeated the %s\n", monster->name);
+            printf("You have defeated the %s.\n", monster->name);
             return 1;
         }
     }
     while(player->health > 0);
     
-    printf("You have been defeated by the %s\n", monster->name);
+    printf("You have been defeated by the %s.\n", monster->name);
     return 0;
 }
 
