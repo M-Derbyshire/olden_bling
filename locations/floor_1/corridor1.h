@@ -13,7 +13,7 @@
 void corridor1(struct Player *player);
 
 #include "prison.h"
-
+#include "mess_hall.h"
 
 
 
@@ -127,7 +127,7 @@ void corridor1(struct Player *player)
             }
         }
         else
-           player->current_location = NULL; 
+           player->current_location = &messHall; 
     }
 }
 
