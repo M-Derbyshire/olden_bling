@@ -12,6 +12,7 @@
 void messHall(struct Player *player);
 
 #include "corridor1.h"
+#include "corridor2.h"
 
 
 
@@ -131,7 +132,7 @@ void messHall(struct Player *player)
             }
         }
         else
-            player->current_location = NULL;
+            player->current_location = &corridor2;
     }
     else if(result == 2)
         player->current_location = &rustySuitOfArmour;
