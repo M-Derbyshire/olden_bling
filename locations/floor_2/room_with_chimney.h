@@ -12,6 +12,8 @@
 /* Last fight of the 2nd floor (defined below) */
 void roomWithChimney(struct Player *player);
 
+#include "../floor_3/corridor8.h"
+
 
 
 
@@ -85,7 +87,7 @@ void roomWithChimney(struct Player *player)
             }
         }
         else
-            player->current_location = NULL;
+            player->current_location = &corridor8;
     }
 }
 
