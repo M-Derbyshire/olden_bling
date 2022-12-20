@@ -22,7 +22,7 @@ void banquetHall(struct Player *player)
     
     static struct Monster chicken = {
         .name = "giant chicken",
-        .health = 5,//85,
+        .health = 85,
         .attack = 20,
         .defense = 5,
         .attack_description_count = 1,

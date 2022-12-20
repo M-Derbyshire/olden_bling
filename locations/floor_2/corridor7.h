@@ -5,11 +5,12 @@
 #include "../../choice.h"
 #include "../../util.h"
 #include "../../items.h"
+#include "banquet_hall.h"
 
 /* Corridor after the banquet hall (defined below) */
 void corridor7(struct Player *player);
 
-#include "banquet_hall.h"
+#include "room_with_chimney.h"
 
 
 
@@ -34,7 +35,7 @@ void corridor7(struct Player *player)
     if(result == 0)
         player->current_location = &banquetHall;
     else if(result == 1)
-        player->current_location = NULL;
+        player->current_location = &roomWithChimney;
     else
     {
         printf("\nYou stand in front of the suit of armour. You notice that it is the only one with a shield.\n");
