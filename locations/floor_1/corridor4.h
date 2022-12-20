@@ -7,6 +7,13 @@
 #include "../../monster.h"
 #include "corridor3.h"
 
+/* The third part of the corridor after the mess hall (defined below) */
+void corridor4(struct Player *player);
+
+#include "../floor_2/corridor5.h"
+
+
+
 
 /* The third part of the corridor after the mess hall */
 void corridor4(struct Player *player)
@@ -60,7 +67,7 @@ void corridor4(struct Player *player)
             }
         }
         else
-            player->current_location = NULL;
+            player->current_location = &corridor5;
     }
 }
 
