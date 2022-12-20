@@ -7,11 +7,12 @@
 #include "../../combat.h"
 #include "../../monster.h"
 #include "../../items.h"
+#include "corridor6.h"
 
 /* Banquet hall (defined below) */
 void banquetHall(struct Player *player);
 
-#include "corridor6.h"
+#include "corridor7.h"
 
 
 /* Banquet hall */
@@ -21,7 +22,7 @@ void banquetHall(struct Player *player)
     
     static struct Monster chicken = {
         .name = "giant chicken",
-        .health = 85,
+        .health = 5,//85,
         .attack = 20,
         .defense = 5,
         .attack_description_count = 1,
@@ -78,7 +79,7 @@ void banquetHall(struct Player *player)
             {
                 printf("You unlock the door with one of the keys you found in the prison.\n");
                 promptToPressEnter("continue");
-                player->current_location = NULL;
+                player->current_location = &corridor7;
             }
             else
             {
