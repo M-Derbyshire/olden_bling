@@ -85,6 +85,7 @@ void prisonCell4(struct Player *player)
 void prisonCorridor(struct Player *player)
 {
     printf("You are standing in a corridor.\n");
+    printf("There are torches mounted on the walls.\n");
     printf("There are 3 other cells next to yours. The door of the 4th is open.\n");
     printf("There is also a door on you right, that leads out of this room.\n\n");
     
