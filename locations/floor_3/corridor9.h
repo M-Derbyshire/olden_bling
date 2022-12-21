@@ -10,6 +10,9 @@
 /* The 2nd part of the corridor on the 3rd floor. (Also has the exit door). Defined below */
 void corridor9(struct Player *player);
 
+#include "treasure_room.h"
+
+
 
 
 
@@ -17,12 +20,12 @@ void corridor9(struct Player *player);
 void endGameText()
 {
     printf("You push and push with all of your new-found might, and the door starts to open.\n");
-    printf("As you get the door open, you can feel the sunlight shining on your face. It feels good.\n\n");
+    printf("As it opens, you can feel the sunlight shining on your face. It feels good.\n\n");
     
-    printf("You run away from the castle.\n");
+    printf("You get out, and run away from the castle.\n");
     printf("You are free once again.\n\n");
     
-    promptToPressEnter("finish");
+    promptToPressEnter("finish the game");
 }
 
 
@@ -46,7 +49,7 @@ void corridor9(struct Player *player)
     if(result == 0)
         player->current_location = &corridor8;
     else if(result == 1)
-        player->current_location = NULL;
+        player->current_location = &treasureRoom;
     else
     {
         printf("\n");
