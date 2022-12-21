@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* get a random string from a monster's description array (rand should be seeded elsewhere) */
+/* get a random string from a string array */
 const char* getRandomStringFromArray(char *arr[], int count)
 {
     return arr[rand() % count];
