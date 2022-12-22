@@ -51,7 +51,7 @@ void prisonCell1(struct Player *player)
 void prisonCell2(struct Player *player)
 {
     printf("You can see a skeleton in the cell.\n");
-    printf("The skeleton is leant up against the wall between this cell and the 3rd.\n\n");
+    printf("The skeleton is leant up against the right wall.\n\n");
     promptToPressEnter("step back");
     player->current_location = &prisonCorridor;
 }
@@ -60,7 +60,7 @@ void prisonCell2(struct Player *player)
 void prisonCell3(struct Player *player)
 {
     printf("You can see a skeleton in the cell.\n");
-    printf("The skeleton is leant up against the wall between this cell and the 2nd.\n\n");
+    printf("The skeleton is leant up against the left wall.\n\n");
     promptToPressEnter("step back");
     player->current_location = &prisonCorridor;
 }
