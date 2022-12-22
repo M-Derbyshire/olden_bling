@@ -20,8 +20,8 @@ void corridor4(struct Player *player)
 {
     static struct Monster shearMan = {
         .name = "shear-man",
-        .health = 100,
-        .attack = 15,
+        .health = 95,
+        .attack = 10,
         .defense = 5,
         .attack_description_count = 2,
         .attack_descriptions = { 
