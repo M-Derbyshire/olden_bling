@@ -7,6 +7,34 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*
+    If the player is repeating the same choice, we want the monster to react to that.
+    returns 1 if too many repeats, or 0 if not
+*/
+short tooManyActionRepeats(int currentAction)
+{
+    short recordedActionCount = 4;
+    static short lastActions[4] = { -1 }; //-1 is unset
+    
+    short earliestAction = lastActions[0];
+    for(short i = 0; i < recordedActionCount; i++)
+    {
+        //First, shift the values down the array, and add the latest action to the last index
+        if(i > 0)
+            lastActions[i-1] = lastActions[i];
+        
+        if(i == recordedActionCount - 1)
+            lastActions[i] = currentAction;
+        
+        //Now check if this action is the same as the one before it
+        if(lastActions[i] != earliestAction)
+            return 0;
+    }
+    
+    return 1;
+}
+
+
 /* Prints a description of a player's attack */
 void printPlayerAttackDesc(struct Player *p) {
     printf("You %s the enemy with your %s.\n", p->weapon.verb, p->weapon.name);
@@ -125,13 +153,23 @@ int runCombat(struct Player *player, struct Monster *monster)
         
         // Determine actions
         int chosenAction = makeChoice(playerChoices, 3);
-        int enemyDefends = (rand() % 3) > 0;
+        short actionRepeatedTooMuch = tooManyActionRepeats(chosenAction);
+        
+        short enemyDefends;
+        if(actionRepeatedTooMuch)
+        {
+            enemyDefends = 0;
+        }
+        else
+            enemyDefends = (rand() % 3) > 0;
+        
         
         // Run round
         runCombatRound(chosenAction, enemyDefends, player, monster);
         printf("\n");
         promptToPressEnter("continue");
         printf("\n");
+        
         
         // End the fight?
         if (monster->health <= 0 && player->health > 0)
