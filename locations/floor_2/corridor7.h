@@ -42,7 +42,7 @@ void corridor7(struct Player *player)
         printf("It is a nice, steel shield. You decide to take it.\n");
         
         struct ValuedItem steelShield = { "steel shield", "block", (short)7 };
-        player->weapon = steelShield;
+        player->defense = steelShield;
         
         shieldHasBeenTaken = 1;
         promptToPressEnter("continue");
