@@ -136,13 +136,13 @@ int runCombat(struct Player *player, struct Monster *monster)
         // End the fight?
         if (monster->health <= 0)
         {
-            printf("You have defeated the %s.\n", monster->name);
+            printf("\n\n\n\nYou have defeated the %s.\n", monster->name);
             return 1;
         }
     }
     while(player->health > 0);
     
-    printf("You have been defeated by the %s.\n", monster->name);
+    printf("\n\n\n\nYou have been defeated by the %s.\n", monster->name);
     return 0;
 }
 
