@@ -9,7 +9,15 @@ typedef struct {
 
 int makeChoice(Choice options[], int optionCount)
 {
+    static short madeChoicePreviously = 0;
+    
     printf("What do you do?\n");
+    
+    if(!madeChoicePreviously)
+    {
+        printf("(Enter the number of your selection, and press enter.)\n");
+        madeChoicePreviously = 1;
+    }
     
     //Display choices
     for(int i = 0; i < optionCount; i++)
