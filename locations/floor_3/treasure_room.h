@@ -57,7 +57,7 @@ void treasureRoom(struct Player *player)
     short soldierIsAlive = (soldier.health > 0);
     
     
-    printf("You enter a large room. There are mounds of gold and jewels piled up against the walls.\n");
+    printf("You are in a large room. There are mounds of gold and jewels piled up against the walls.\n");
     printf("In the far corner, you notice a chest. It has a padlock on it, but the padlock is open.\n\n");
     
     if(soldierIsAlive)
