@@ -31,7 +31,7 @@ void privy(struct Player *player)
         printf("\"You are in the dungeons of the castle of the great King Namso.\" the man explains. You ask who King Namso is.\n");
         printf("\"He is a man of much knowledge, and great stature. And the reason you are here is because you made a very big mistake.\"\n");
         printf("You don't remember making a mistake, and the man sees the look of confusion on your face, so he explains:\n\n");
-        printf("\"When one has drunk too much, one should be careful who's lap one throws up on.\n\"");
+        printf("\"When one has drunk too much, one should be careful who's lap one throws up on.\"\n");
         printf("Your eyes widen suddenly, as you remember something from the night before.\n");
         
         alreadyOpenedDoor = 1;
