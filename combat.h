@@ -125,7 +125,7 @@ int runCombat(struct Player *player, struct Monster *monster)
         
         // Determine actions
         int chosenAction = makeChoice(playerChoices, 3);
-        int enemyDefends = rand() % 2;
+        int enemyDefends = (rand() % 3) > 0;
         
         // Run round
         runCombatRound(chosenAction, enemyDefends, player, monster);

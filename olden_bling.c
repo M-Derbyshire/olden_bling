@@ -18,7 +18,10 @@ int main()
     while(player.current_location != NULL) 
     {
         (*player.current_location)(&player);
-        printf("\n----------\n\n\n\n\n");
+        printf("\n----------\n\n");
+        
+        if(player.current_location != NULL)
+            printf("\n\n\n"); //Only add the extra new lines if we haven't reached a loss state
     }
     
     promptToPressEnter("end the game");
