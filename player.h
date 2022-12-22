@@ -19,8 +19,7 @@ struct ValuedItem getPlayerInitialWeapon()
 /* The player's starting shield -- their hands */
 struct ValuedItem getPlayerInitialDefense()
 {
-    // struct ValuedItem playerInitialDefense = { "hands", "block", (short)3 };
-    struct ValuedItem playerInitialDefense = { "rusty shield", "block", (short)5 };
+    struct ValuedItem playerInitialDefense = { "hands", "block", (short)3 };
     return playerInitialDefense;
 }
 
@@ -65,9 +64,6 @@ struct Player createPlayer()
     player.weapon = getPlayerInitialWeapon();
     player.defense = getPlayerInitialDefense();
     player.collectable_count = 0;
-    
-    addCollectibleToPlayer(&player, KEYRING);
-    addCollectibleToPlayer(&player, WEBRUNE);
     
     return player;
 }
