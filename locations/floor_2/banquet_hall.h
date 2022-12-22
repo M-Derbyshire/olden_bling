@@ -19,6 +19,7 @@ void banquetHall(struct Player *player);
 void banquetHall(struct Player *player)
 {
     static short chickenIsEaten = 0;
+    static short doorUnlocked = 0;
     
     static struct Monster chicken = {
         .name = "giant chicken",
@@ -77,8 +78,13 @@ void banquetHall(struct Player *player)
         {
             if(playerHasCollectable(player, KEYRING))
             {
-                printf("You unlock the door with one of the keys you found in the prison.\n");
-                promptToPressEnter("continue");
+                if(!doorUnlocked)
+                {
+                    printf("You unlock the door with one of the keys you found in the prison.\n");
+                    promptToPressEnter("continue");
+                    doorUnlocked = 1;
+                }
+                
                 player->current_location = &corridor7;
             }
             else
