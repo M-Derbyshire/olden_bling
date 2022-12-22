@@ -5,6 +5,8 @@
 #include "util.h"
 #include "./locations/floor_1/prison.h"
 
+#include "./locations/floor_2/corridor5.h"
+
 
 
 int main()
@@ -13,7 +15,8 @@ int main()
     
     struct Player player = createPlayer();
     
-    player.current_location = &prisonCell1;
+    // player.current_location = &prisonCell1;
+    player.current_location = &corridor5;
     
     while(player.current_location != NULL) 
     {

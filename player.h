@@ -19,7 +19,8 @@ struct ValuedItem getPlayerInitialWeapon()
 /* The player's starting shield -- their hands */
 struct ValuedItem getPlayerInitialDefense()
 {
-    struct ValuedItem playerInitialDefense = { "hands", "block", (short)3 };
+    // struct ValuedItem playerInitialDefense = { "hands", "block", (short)3 };
+    struct ValuedItem playerInitialDefense = { "rusty shield", "block", (short)5 };
     return playerInitialDefense;
 }
 
