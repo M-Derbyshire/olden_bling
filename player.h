@@ -66,6 +66,9 @@ struct Player createPlayer()
     player.defense = getPlayerInitialDefense();
     player.collectable_count = 0;
     
+    addCollectibleToPlayer(&player, KEYRING);
+    addCollectibleToPlayer(&player, WEBRUNE);
+    
     return player;
 }
 
