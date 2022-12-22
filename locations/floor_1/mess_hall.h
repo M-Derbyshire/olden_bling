@@ -44,7 +44,7 @@ void rustySuitOfArmour(struct Player *player)
 /* Food left in the corner of the mess hall */
 void messHallLeftOvers(struct Player *player)
 {
-    int healthGain = 70;
+    int healthGain = 30;
     int healthWithGain = player->health + healthGain;
     int newHealth = (healthWithGain < player->max_health) ? healthWithGain : player->max_health;
     
@@ -67,9 +67,9 @@ void messHall(struct Player *player)
 {
     static struct Monster bull = {
         .name = "bull",
-        .health = 75,
-        .attack = 10,
-        .defense = 3,
+        .health = 90,
+        .attack = 15,
+        .defense = 5,
         .attack_description_count = 2,
         .attack_descriptions = { 
             "Bull swings its nose-ring at you, trying to slice you.", 
