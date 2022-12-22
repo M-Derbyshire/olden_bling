@@ -68,7 +68,7 @@ void messHall(struct Player *player)
     static struct Monster bull = {
         .name = "bull",
         .health = 75,
-        .attack = 15,
+        .attack = 10,
         .defense = 3,
         .attack_description_count = 2,
         .attack_descriptions = { 
