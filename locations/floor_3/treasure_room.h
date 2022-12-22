@@ -45,7 +45,7 @@ void treasureRoom(struct Player *player)
         .name = "soldier",
         .health = 100,
         .attack = 20,
-        .defense = 10,
+        .defense = 7,
         .attack_description_count = 1,
         .attack_descriptions = { 
             "Soldier swings his axe at you."
