@@ -44,27 +44,18 @@ void rustySuitOfArmour(struct Player *player)
 /* Food left in the corner of the mess hall */
 void messHallLeftOvers(struct Player *player)
 {
-    static short alreadyEaten = 0;
+    int healthGain = 50;
+    int healthWithGain = player->health + healthGain;
+    int newHealth = (healthWithGain < player->max_health) ? healthWithGain : player->max_health;
     
-    if(!alreadyEaten)
-    {
-        int healthGain = 50;
-        int healthWithGain = player->health + healthGain;
-        int newHealth = (healthWithGain < player->max_health) ? healthWithGain : player->max_health;
-        
-        printf("You sit down at the end of the table, and start to eat the cold food.\n");
-        printf("The food doesn't taste nice, but it is nourishing.\n");
-        if(player->health < newHealth)
-            printf("Your health increases to %d.\n", newHealth);
-        
-        printf("\n");
-        
-        player->health = newHealth;
-        alreadyEaten = 1;
-    }
-    else
-        printf("There is no more food for you to eat.\n\n");
+    printf("You sit down at the end of the table, and start to eat the cold food.\n");
+    printf("The food doesn't taste nice, but it is nourishing.\n");
+    if(player->health < newHealth)
+        printf("Your health increases to %d.\n", newHealth);
     
+    printf("\n");
+    
+    player->health = newHealth;
     
     promptToPressEnter("continue");
     player->current_location = &messHall;
@@ -90,11 +81,14 @@ void messHall(struct Player *player)
     
     short bullIsAlive = (bull.health > 0);
     
+    static short foodHasBeenEaten = 0;
+    
     
     printf("You are in a large hall, with 5 long tables.\n");
     printf("On the wall to your left, there are shelves of trophies and antiques, and also a rusty old suit of armour.\n");
     printf("To your right, there is a door out of the hall.\n");
-    printf("In the corner, there is a plate of left-over food.\n");
+    if(!foodHasBeenEaten)
+        printf("In the corner, there is a plate of left-over food.\n");
     
     if(bullIsAlive)
     {
@@ -105,7 +99,7 @@ void messHall(struct Player *player)
     
     printf("\n");
     
-    short optionCount = (bullIsAlive) ? 2 : 4;
+    short optionCount = (bullIsAlive) ? 2 : (4 - foodHasBeenEaten);
     Choice options[4] = {
         { 0, "Go back into the corridor that leads to the jail." },
         { 1, (bullIsAlive) ? "Fight the bull monster." : "Leave through the door to your right." },
@@ -137,7 +131,10 @@ void messHall(struct Player *player)
     else if(result == 2)
         player->current_location = &rustySuitOfArmour;
     else
+    {
         player->current_location = &messHallLeftOvers;
+        foodHasBeenEaten = 1;
+    }
 }
 
 
