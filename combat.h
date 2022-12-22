@@ -14,7 +14,7 @@ void printPlayerAttackDesc(struct Player *p) {
 
 /* Prints a description of a player's defense */
 void printPlayerDefenseDesc(struct Player *p) {
-    printf("You %s the enemy's attack with your %s.\n", p->defense.verb, p->defense.name);
+    printf("You %s with your %s.\n", p->defense.verb, p->defense.name);
 }
 
 /* Prints a random attack description for a monster */
