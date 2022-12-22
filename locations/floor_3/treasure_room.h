@@ -44,7 +44,7 @@ void treasureRoom(struct Player *player)
     static struct Monster soldier = {
         .name = "soldier",
         .health = 100,
-        .attack = 20,
+        .attack = 15,
         .defense = 7,
         .attack_description_count = 1,
         .attack_descriptions = { 
