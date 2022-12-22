@@ -37,7 +37,7 @@ void corridor4(struct Player *player)
     printf("You are standing in a corridor.\n");
     if(shearManIsAlive)
     {
-        printf("In front of you is a strange man, with small antlers and a white tail.\n");
+        printf("In front of you there is a strange man, with small antlers and a white tail.\n");
         printf("Instead of hands, the man has large shears at the ends of his arms.\n");
     }
     printf("At the other end of the corridor, there is a spiral staircase, leading up to the next floor.\n\n");
