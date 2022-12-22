@@ -29,7 +29,7 @@ void corridor4(struct Player *player)
             "Shear-man slashes at you with his open shears." 
         },
         .defense_description_count = 1,
-        .defense_descriptions = { "Barber blocks with his shears." }
+        .defense_descriptions = { "Shear-man blocks with his shears." }
     };
     
     short shearManIsAlive = (shearMan.health > 0);
