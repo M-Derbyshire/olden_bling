@@ -18,7 +18,7 @@ int main()
     while(player.current_location != NULL) 
     {
         (*player.current_location)(&player);
-        printf("\n----------\n\n");
+        printf("\n----------\n\n\n\n\n");
     }
     
     promptToPressEnter("end the game");
