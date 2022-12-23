@@ -7,23 +7,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define RECORDED_ACTION_COUNT 7
+
+
+/* Used to keep track of the last few actions the player has chosen, during a fight */
+static short lastActions[RECORDED_ACTION_COUNT] = { -1 }; //-1 is unset
+
 /*
     If the player is repeating the same choice, we want the monster to react to that.
     returns 1 if too many repeats, or 0 if not
 */
 short tooManyActionRepeats(int currentAction)
 {
-    short recordedActionCount = 4;
-    static short lastActions[4] = { -1 }; //-1 is unset
-    
     short earliestAction = lastActions[0];
-    for(short i = 0; i < recordedActionCount; i++)
+    for(short i = 0; i < RECORDED_ACTION_COUNT; i++)
     {
         //First, shift the values down the array, and add the latest action to the last index
         if(i > 0)
             lastActions[i-1] = lastActions[i];
         
-        if(i == recordedActionCount - 1)
+        if(i == RECORDED_ACTION_COUNT - 1)
             lastActions[i] = currentAction;
         
         //Now check if this action is the same as the one before it
@@ -32,6 +35,13 @@ short tooManyActionRepeats(int currentAction)
     }
     
     return 1;
+}
+
+/* reset the static lastActions array */
+void resetActionRecord()
+{
+    for(int i = 0; i < RECORDED_ACTION_COUNT; i++)
+        lastActions[i] = -1;
 }
 
 
@@ -175,6 +185,7 @@ int runCombat(struct Player *player, struct Monster *monster)
         if (monster->health <= 0 && player->health > 0)
         {
             printf("\n\n\n\nYou have defeated the %s.\n", monster->name);
+            resetActionRecord();
             return 1;
         }
     }
