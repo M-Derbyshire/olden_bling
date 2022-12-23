@@ -36,7 +36,7 @@ void corridor9(struct Player *player)
     
     printf("You are standing in a long corridor.\n");
     printf("At the other end of the corridor, there is a door.\n");
-    printf("Halfway down the corridor, on the left, there is a very large door, and a man sat next to it.\n\n");
+    printf("Halfway down the corridor, on the left, there is a very large door (it looks too heavy for you to open). There is a man sat next to it.\n\n");
     
     Choice options[3] = {
         { 0, "Go back down the corridor, towards the staircase." },

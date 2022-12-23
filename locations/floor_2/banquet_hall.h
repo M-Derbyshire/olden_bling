@@ -44,14 +44,14 @@ void banquetHall(struct Player *player)
         printf("It's also twice the size of you, and wearing a golden breastplate. You can see that it is angry.\n");
     }
     else if(!chickenIsEaten)
-        printf("The corpse of the giant chicken rests in the center of the table.\n");
+        printf("The corpse of the giant chicken rests in the centre of the table.\n");
     
     printf("\n");
     
     
     
     Choice options[3] = {
-        { 0, "Go back into the corridor, towards the staircase." },
+        { 0, "Go back into the corridor that leads to the staircase." },
         { 1, (chickenIsAlive) ? "Fight the giant chicken." : "Go through the door." },
         { 2, "Eat the chicken's remains." }
     };

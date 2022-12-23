@@ -25,7 +25,7 @@ void corridor8(struct Player *player)
     if(!beenHereBefore)
     {
         printf("The soldier looks up at you, surprised.\n");
-        printf("\"Blimey!\" he exclaims. \"How did you get out of the cells?\"\n");
+        printf("\"Blimey!\" he exclaims. \"How did you get out of the prison?\"\n");
         printf("\"I tell you what,\" he says \"If you can get past our monsters, I'm not going to get in your way.\"\n\n");
         beenHereBefore = 1;
     }

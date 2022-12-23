@@ -67,7 +67,7 @@ void roomWithChimney(struct Player *player)
                 printf("\nAs you get ready to fight the giant fly, it notices the Web Rune hanging from your belt.\n");
                 printf("(This was the rune that you won from the old man, outside the prison area.)\n\n");
                 
-                printf("The fly lets out a screech as it sees the rune, and then quickly flys into the fireplace, and up the chimney.\n");
+                printf("The fly lets out a screech as it sees the rune, and then quickly flies into the fireplace, and up the chimney.\n");
                 promptToPressEnter("continue");
                 fly.health = 0; // Just to take it out of play
             }

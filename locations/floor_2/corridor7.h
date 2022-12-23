@@ -26,7 +26,7 @@ void corridor7(struct Player *player)
     
     Choice options[3] = {
         { 0, "Go back into the banquet hall." },
-        { 1, "Go down the corridor, through the door." },
+        { 1, "Go down the corridor, and through the door." },
         { 2, "Look at the suit of armour with the moustache." }
     };
     

@@ -36,8 +36,8 @@ void prisonCell1(struct Player *player)
     }
     
     Choice options[2] = {
-        { 0, "Leave the cell" },
-        { 1, "Stay here and feel sorry for yourself" }
+        { 0, "Leave the cell." },
+        { 1, "Stay here and feel sorry for yourself." }
     };
     
     int result = makeChoice(options, 2);
@@ -51,7 +51,7 @@ void prisonCell1(struct Player *player)
 void prisonCell2(struct Player *player)
 {
     printf("You can see a skeleton in the cell.\n");
-    printf("The skeleton is leant up against the right wall.\n\n");
+    printf("The skeleton is leant up against the wall to the right.\n\n");
     promptToPressEnter("step back");
     player->current_location = &prisonCorridor;
 }
@@ -60,7 +60,7 @@ void prisonCell2(struct Player *player)
 void prisonCell3(struct Player *player)
 {
     printf("You can see a skeleton in the cell.\n");
-    printf("The skeleton is leant up against the left wall.\n\n");
+    printf("The skeleton is leant up against the wall to the left.\n\n");
     promptToPressEnter("step back");
     player->current_location = &prisonCorridor;
 }
@@ -86,8 +86,8 @@ void prisonCorridor(struct Player *player)
 {
     printf("You are standing in a corridor.\n");
     printf("There are torches mounted on the walls.\n");
-    printf("There are 3 other cells next to yours. The door of the 4th is open.\n");
-    printf("There is also a door on you right, that leads out of this room.\n\n");
+    printf("There are 3 other cells next to yours. The door of the 4th cell is open.\n");
+    printf("There is also a door on your right, that leads out of this room.\n\n");
     
     Choice options[5] = {
         { 0, "Go back in your cell and feel sorry for yourself." },

@@ -30,7 +30,7 @@ void coinFlipRoom(struct Player *player)
         printf("I have here in my pocket a coin, and I do enjoy flipping it.\n");
         printf("If it lands on heads, you can win yourself a fabulous prize. But, if it lands on tails... you die.\n\n");
         
-        printf("Would you like play my little game?\"\n\n");
+        printf("Would you like to play my little game?\"\n\n");
         
         Choice options[2] = {
             { 0, "Yes." },
