@@ -27,12 +27,12 @@ After creating an instance of a `Player` struct, and setting its initial locatio
 
  - **olden_bling.c** -- The entry point for the game. Runs the game loop.
  - **/locations** -- The directory for the functions that represent locations in the game.
- - **player.h** -- Defines the `Player` struct. Also defines the `Location` function pointer type. Also contains functions for instantiating a new player, and for handling the player's collectibles.
- - **monster.h** -- Defines the `Monster` struct, used to represent enemies in the game.
- - **choice.h** -- `makeChoice` is used to present the player with a number of options.
- - **combat.h** -- `runCombat` is used to run the combat between the player and an enemy.
- - **items.h** -- Defines the collectibles in the game, and also the `ValuedItem` struct for other items (such as weapons/shields).
- - **util.h** -- Contains utility functions.
+ - **/engine/player.h** -- Defines the `Player` struct. Also defines the `Location` function pointer type. Also contains functions for instantiating a new player, and for handling the player's collectibles.
+ - **/engine/monster.h** -- Defines the `Monster` struct, used to represent enemies in the game.
+ - **/engine/choice.h** -- `makeChoice` is used to present the player with a number of options.
+ - **/engine/combat.h** -- `runCombat` is used to run the combat between the player and an enemy.
+ - **/engine/items.h** -- Defines the collectibles in the game, and also the `ValuedItem` struct for other items (such as weapons/shields).
+ - **/engine/util.h** -- Contains utility functions.
 
 [My Twitter: @mattdarbs](http://twitter.com/mattdarbs)  
 [My Portfolio](http://md-developer.uk)
