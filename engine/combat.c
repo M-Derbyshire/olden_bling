@@ -18,6 +18,10 @@ static short lastActions[RECORDED_ACTION_COUNT] = { -1 }; //-1 is unset
 short tooManyActionRepeats(int currentAction)
 {
     short earliestAction = lastActions[0];
+    
+    if(currentAction != earliestAction)
+        return 0;
+    
     for(short i = 0; i < RECORDED_ACTION_COUNT; i++)
     {
         //First, shift the values down the array
