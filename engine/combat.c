@@ -1,5 +1,3 @@
-#ifndef COMBAT_HG
-#define COMBAT_HG
 #include "player.h"
 #include "monster.h"
 #include "choice.h"
@@ -194,5 +192,3 @@ int runCombat(struct Player *player, struct Monster *monster)
     printf("\n\n\n\nYou have been defeated by the %s.\n", monster->name);
     return 0;
 }
-
-#endif

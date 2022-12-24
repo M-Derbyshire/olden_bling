@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "player.h"
-#include "util.h"
+#include "./engine/player.h"
+#include "./engine/util.h"
 #include "./locations/floor_1/prison.h"
 
 

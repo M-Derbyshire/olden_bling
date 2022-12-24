@@ -1,5 +1,3 @@
-#ifndef UTIL_HG
-#define UTIL_HG
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -19,5 +17,3 @@ void promptToPressEnter(char *verb)
     int c;
     while((c = getchar()) != '\n' && c != '\r');
 }
-
-#endif
