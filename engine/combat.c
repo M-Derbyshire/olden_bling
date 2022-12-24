@@ -20,16 +20,17 @@ short tooManyActionRepeats(int currentAction)
     short earliestAction = lastActions[0];
     for(short i = 0; i < RECORDED_ACTION_COUNT; i++)
     {
-        //First, shift the values down the array, and add the latest action to the last index
+        //First, shift the values down the array
         if(i > 0)
             lastActions[i-1] = lastActions[i];
         
-        if(i == RECORDED_ACTION_COUNT - 1)
-            lastActions[i] = currentAction;
-        
-        //Now check if this action is the same as the one before it
+        //check if this action is the same as the one before it
         if(lastActions[i] != earliestAction)
             return 0;
+        
+        //now add the latest action to the last index
+        if(i == RECORDED_ACTION_COUNT - 1)
+            lastActions[i] = currentAction;
     }
     
     return 1;
