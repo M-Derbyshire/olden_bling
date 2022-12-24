@@ -1,12 +1,5 @@
-#ifndef CHOICE_HG
-#define CHOICE_HG
 #include <stdio.h>
 #include "choice.h"
-
-typedef struct {
-    int chosenSectionIndex;
-    char* optionStr;
-}Choice;
 
 int makeChoice(Choice options[], int optionCount)
 {
@@ -43,5 +36,3 @@ int makeChoice(Choice options[], int optionCount)
     //Return selected function's index
     return options[selection - 1].chosenSectionIndex;
 }
-
-#endif
