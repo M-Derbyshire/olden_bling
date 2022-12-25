@@ -20,8 +20,18 @@ void exitFromLife(struct Player *player)
         printf("The axe (pushed by the spring) swings down at you. It slashes you through the chest.\n\n");
         
         player->health = player->health / 10; //We're OK with a little truncation here
-        printf("Your health is now %d.\n", player->health);
-        doorOpenedBefore = 1;
+        
+        if(player->health == 0)
+        {
+            printf("The wound kills you.\n");
+            player->current_location = NULL;
+            return;
+        }
+        else
+        {
+            printf("Your health is now %d.\n", player->health);
+            doorOpenedBefore = 1;
+        }
     }
     else
         printf("There is an axe hanging off the wall, attached by an axle.\n");
