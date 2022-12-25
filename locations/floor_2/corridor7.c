@@ -30,7 +30,8 @@ void corridor7(struct Player *player)
         player->current_location = &roomWithChimney;
     else
     {
-        printf("\nYou stand in front of the suit of armour. You notice that it is the only one with a shield.\n");
+        clearScreen();
+        printf("You stand in front of the suit of armour. You notice that it is the only one with a shield.\n");
         printf("It is a nice, steel shield. You decide to take it.\n");
         
         struct ValuedItem steelShield = { "steel shield", "block", (short)7 };
@@ -38,6 +39,5 @@ void corridor7(struct Player *player)
         
         shieldHasBeenTaken = 1;
         promptToPressEnter("continue");
-        printf("\n");
     }
 }

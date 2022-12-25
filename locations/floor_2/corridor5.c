@@ -30,13 +30,13 @@ void corridor5(struct Player *player)
         player->current_location = &corridor6;
     else
     {
-        printf("\nYou slowly pick up the soldier's steel sword, trying not to wake him.\n");
+        clearScreen();
+        printf("You slowly pick up the soldier's steel sword, trying not to wake him.\n");
         
         struct ValuedItem steelSword = { "steel sword", "slash", (short)15 };
         player->weapon = steelSword;
         swordAlreadyTaken = 1;
         
         promptToPressEnter("continue");
-        printf("\n");
     }
 }

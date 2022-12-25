@@ -23,8 +23,6 @@ void prisonCell1(struct Player *player)
         printf("%s..\n\n", basicDesc);
         printf("You realise that the smell is you... you'd had some bad sushi before you were knocked unconscious.\n\n");
         printf("You can see that you are in a cell, but it looks like the cell door was left unlocked.\n\n");
-        promptToPressEnter("continue");
-        printf("\n");
         hasReadFullDescription = 1;
     }
     

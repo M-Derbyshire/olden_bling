@@ -32,7 +32,8 @@ void corridor6(struct Player *player)
         player->current_location = &banquetHall;
     else
     {
-        printf("\nYou drink the potion, and feel your health being fully restored.\n");
+        clearScreen();
+        printf("You drink the potion, and feel your health being fully restored.\n");
         promptToPressEnter("continue");
         player->health = player->max_health;
         potionAlreadyTaken = 1;

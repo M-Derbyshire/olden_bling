@@ -10,4 +10,7 @@ const char* getRandomStringFromArray(char *arr[], int count);
 */
 void promptToPressEnter(char *verb);
 
+/* Clear the console screen, ready for the next "screen" of the game */
+void clearScreen();
+
 #endif

@@ -56,8 +56,10 @@ void roomWithChimney(struct Player *player)
         {
             if(playerHasCollectable(player, WEBRUNE))
             {
+                clearScreen();
+                
                 //The monster is scared of the Web Rune
-                printf("\nAs you get ready to fight the giant fly, it notices the Web Rune hanging from your belt.\n");
+                printf("As you get ready to fight the giant fly, it notices the Web Rune hanging from your belt.\n");
                 printf("(This was the rune that you won from the old man, outside the prison area.)\n\n");
                 
                 printf("The fly lets out a screech as it sees the rune, and then quickly flies into the fireplace, and up the chimney.\n");
@@ -67,7 +69,6 @@ void roomWithChimney(struct Player *player)
             else
             {
                 //If you don't have the rune, you have to fight the fly
-                printf("\n");
                 short fightResult = runCombat(player, &fly);
                 if(fightResult == 0)
                     player->current_location = NULL; 
@@ -75,7 +76,6 @@ void roomWithChimney(struct Player *player)
                 {
                     printf("You stand amazed. You honestly have no idea how you just did that.\n");
                     promptToPressEnter("continue");
-                    printf("\n");
                 }
             }
         }

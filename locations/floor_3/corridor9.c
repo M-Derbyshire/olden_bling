@@ -43,7 +43,7 @@ void corridor9(struct Player *player)
         player->current_location = &treasureRoom;
     else
     {
-        printf("\n");
+        clearScreen();
         
         if(playerHasCollectable(player, OLDENBLING)) //End game
         {

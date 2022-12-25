@@ -162,6 +162,8 @@ int runCombat(struct Player *player, struct Monster *monster)
     
     do
     {
+        clearScreen();
+        
         printHealthInfo(player, monster);
         
         // Determine actions
@@ -181,19 +183,20 @@ int runCombat(struct Player *player, struct Monster *monster)
         runCombatRound(chosenAction, enemyDefends, player, monster);
         printf("\n");
         promptToPressEnter("continue");
-        printf("\n");
         
         
         // End the fight?
         if (monster->health <= 0 && player->health > 0)
         {
-            printf("\n\n\n\nYou have defeated the %s.\n", monster->name);
+            clearScreen();
+            printf("You have defeated the %s.\n", monster->name);
             resetActionRecord();
             return 1;
         }
     }
     while(player->health > 0);
     
-    printf("\n\n\n\nYou have been defeated by the %s.\n", monster->name);
+    clearScreen();
+    printf("You have been defeated by the %s.\n", monster->name);
     return 0;
 }

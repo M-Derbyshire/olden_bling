@@ -31,6 +31,9 @@ void coinFlipRoom(struct Player *player)
         };
         
         short result = makeChoice(options, 2);
+        
+        clearScreen();
+        
         if(result == 0)
         {
             int landsOnHeads = rand() % 2;

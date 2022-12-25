@@ -20,7 +20,7 @@ void treasureChest(struct Player *player)
         printf("The plaque has letters engraved into it: G.A.N.G.S.T.A\n\n");
         
         printf("You stand up, having suddenly realised that this bracelet matches the description of the legendary Olden Bling!\n");
-        printf("It was said that this piece of jewellery would give the one wearing it the strength of 20 men!\n");
+        printf("It was said that this piece of jewellery would give the one wearing it the strength of 20 men!\n\n");
         
         addCollectibleToPlayer(player, OLDENBLING);
     }
@@ -73,14 +73,14 @@ void treasureRoom(struct Player *player)
     {
         if(soldierIsAlive)
         {
-            printf("\n");
+            clearScreen();
             short fightResult = runCombat(player, &soldier);
             if(fightResult == 0)
                 player->current_location = NULL; 
             else
             {
-                promptToPressEnter("continue");
                 printf("\n");
+                promptToPressEnter("continue");
             }
         }
         else

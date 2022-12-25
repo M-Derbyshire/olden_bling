@@ -59,14 +59,12 @@ void banquetHall(struct Player *player)
     {
         if(chickenIsAlive)
         {
-            printf("\n");
             short fightResult = runCombat(player, &chicken);
             if(fightResult == 0)
                 player->current_location = NULL; 
             else
             {
                 promptToPressEnter("continue");
-                printf("\n");
             }
         }
         else
@@ -75,6 +73,7 @@ void banquetHall(struct Player *player)
             {
                 if(!doorUnlocked)
                 {
+                    clearScreen();
                     printf("You unlock the door with one of the keys you found in the prison.\n");
                     promptToPressEnter("continue");
                     doorUnlocked = 1;
@@ -84,6 +83,7 @@ void banquetHall(struct Player *player)
             }
             else
             {
+                clearScreen();
                 printf("You try to open the door, but it's locked.\n");
                 promptToPressEnter("continue");
             }
@@ -91,6 +91,7 @@ void banquetHall(struct Player *player)
     }
     else
     {
+        clearScreen();
         printf("You make a fire out of some wood, and cook the chicken's remains.\n");
         printf("The chicken was so large that the meal restores you back to full health.\n");
         promptToPressEnter("continue");
